@@ -1,0 +1,66 @@
+{% macro picture(class, path, name, ext, alt="", width = null, height = null, large = true, middle = true, maxdppx = 2, lazy = true) %}
+  {% set formats = ["avif", "webp", ext] %}
+  {% set densities = range(1, maxdppx, 1) %}
+  {% set viewports = [
+    {
+      "name": "large",
+      "suffix": "l",
+      "breakpoint": "1280",
+      "isNeeded": large
+    },
+    {
+      "name": "middle",
+      "suffix": "m",
+      "breakpoint": "768",
+      "isNeeded": middle
+    },
+    {
+      "name": "small",
+      "suffix": "s",
+      "breakpoint": null,
+      "isNeeded": true
+    }
+  ] %}
+
+  <picture>
+    {% for format in formats -%}
+      {% for vp in viewports if vp.isNeeded -%}
+        {% if format != ext or vp.name != "small" -%}
+          <source
+            srcset="
+              {%- for dppx in densities -%}
+                {{ path }}{{ name }}-{{ vp.suffix }}@{{ dppx }}x.{{ format }} {{ dppx }}x{% if dppx != maxdppx %}, {% endif %}
+              {%- endfor -%}
+            "
+            type="image/{{ format }}"
+            {% if vp.breakpoint -%}
+              media="(min-width: {{ vp.breakpoint }}px)"
+            {%- endif -%}
+          >
+
+        {% else -%}
+          <img
+            class="{{ class }}"
+            src="{{ path }}{{ name }}-{{ vp.suffix }}@1x.{{ ext }}"
+            srcset="
+              {%- for dppx in densities if dppx != 1 -%}
+                {{ path }}{{ name }}-s@{{ dppx }}x.{{ ext }} {{ dppx }}x
+                {%- if dppx != maxdppx -%}
+                  ,
+                {%- endif -%}
+              {%- endfor -%}
+            "
+            {% if width %}width="{{ width }}" {% endif -%}
+            {% if height %}height="{{ height }}" {% endif -%}
+            {% if lazy %}loading="lazy" {% endif -%}
+            alt="{{ alt }}"
+          >
+
+        {% endif -%}
+
+      {%- endfor -%}
+
+    {% endfor %}
+  </picture>
+
+{% endmacro %}

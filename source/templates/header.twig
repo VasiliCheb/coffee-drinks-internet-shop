@@ -1,0 +1,36 @@
+<header class="page-header page__wrapper-center">
+  <div class="page-header__wrapper-logo">
+    <a class="page-header__logo-link page-header__logo-link--image" href="index.html" {% if permalink == "index.html" %}aria-current="page"{% endif %}>
+      <picture>
+        <source media="(min-width: 1280px)" srcset="./img/logos.svg#mark-l">
+        <source media="(min-width: 768px)" srcset="./img/logos.svg#mark-m">
+        <img class="page-header__logo-image" src="./img/logos.svg#mark-s" width="33" height="38" alt="Значок логотипа компании «Кэт энерджи».">
+      </picture>
+    </a>
+    <a class="page-header__logo-link page-header__logo-link--title" href="index.html" {% if permalink == "index.html" %}aria-current="page"{% endif %}>
+      <svg class="page-header__logo-title" role="img" width="102" height="19" aria-label="Логотип компании «Кэт энерджи.">
+        <use aria-hidden="true" href="./img/logos.svg#logo"></use>
+      </svg>
+    </a>
+  </div>
+  <nav class="page-header__main-nav main-nav {% if permalink == "index.html" %}main-nav--within_index{% endif %}">
+    <button class="main-nav__toggle" type="button" hidden>
+      <span class="page__hidden">Открыть или закрыть меню.</span>
+    </button>
+    <ul class="main-nav__list">
+      {% for page in pages %}
+        <li class="main-nav__item">
+          <a
+            class="main-nav__link"
+            href="{{ page.path }}"
+            {% if permalink == page.path %}
+              aria-current="page"
+            {% endif %}
+          >{{ page.name }}</a>
+        </li>
+      {% else %}
+        <li>Из навигации пропали все пункты 😕</li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>

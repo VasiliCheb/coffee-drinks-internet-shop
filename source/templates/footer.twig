@@ -1,0 +1,54 @@
+<footer class="page-footer {% if permalink == "index.html" %}page-footer--within_index{% endif %}">
+  <div class="page-footer__wrapper">
+    <div class="page-footer__wrapper-grid">
+      <div class="page-footer__contacts page__wrapper-center">
+        <div class="contacts">
+          <em class="contacts__cooperation">Приглашаем<br>к сотрудничеству<br>дилеров!</em>
+          <address class="contacts__text">
+            <p class="contacts__street">ул. Большая<br>Конюшенная, д. 19/8</p>
+            <p class="contacts__city">Санкт-Петербург</p>
+          </address>
+        </div>
+      </div>
+
+      <div class="page-footer__location location">
+        <iframe class="page-footer__iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533277!2d30.320858716096975!3d59.93871648187614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2sby!4v1638037165046!5m2!1sru!2sby" allowfullscreen="" loading="lazy"></iframe>
+        <noscript class="page-footer__noscript">
+          {{ macros.picture("location__noscript-image", "./img/", "footer-location", "png", "Карта местности. Расположение локации на местности.", "320", "362") }}
+        </noscript>
+      </div>
+    </div>
+
+    <div class="page-footer__container page__wrapper-center">
+      <div class="page-footer__logo">
+        <a class="page-footer__logo-link" href="index.html" {% if permalink == "index.html" %}aria-current="page"{% endif %}>
+          <svg class="page-footer__logo-title" role="img" width="128" height="24" aria-label="Логотип компании «Кэт энерджи.">
+            <use aria-hidden="true" href="./img/logos.svg#logo"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="page-footer__social social">
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vkontakte" href="https://vk.com/htmlacademy">
+              <span class="page__hidden">Вконтакте</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--instagram" href="https://www.instagram.com/htmlacademy">
+              <span class="page__hidden">Инстаграм</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link social__link--facebook" href="https://www.facebook.com/htmlacademy">
+              <span class="page__hidden">Фейсбук</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="page-footer__copyright copyright">
+        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive">HTML Academy</a>
+      </div>
+    </div>
+  </div>
+</footer>
