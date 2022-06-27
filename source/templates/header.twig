@@ -1,17 +1,13 @@
 <header class="page-header page__wrapper-center">
   <div class="page-header__wrapper-logo">
-    <a class="page-header__logo-link page-header__logo-link--image" href="index.html" {% if permalink == "index.html" %}aria-current="page"{% endif %}>
+    <a class="page-header__logo-link" href="index.html" {% if permalink == "index.html" %}aria-current="page"{% endif %}>
       <picture>
-        <source media="(min-width: 1280px)" srcset="./img/logos.svg#mark-l">
+        <source media="(min-width: 1400px)" srcset="./img/logos.svg#mark-l">
         <source media="(min-width: 768px)" srcset="./img/logos.svg#mark-m">
-        <img class="page-header__logo-image" src="./img/logos.svg#mark-s" width="33" height="38" alt="Значок логотипа компании «Кэт энерджи».">
+        <img class="page-header__logo-image" src="./img/logos.svg#mark-s" width="32" height="36" alt="Логотип магазина.">
       </picture>
     </a>
-    <a class="page-header__logo-link page-header__logo-link--title" href="index.html" {% if permalink == "index.html" %}aria-current="page"{% endif %}>
-      <svg class="page-header__logo-title" role="img" width="102" height="19" aria-label="Логотип компании «Кэт энерджи.">
-        <use aria-hidden="true" href="./img/logos.svg#logo"></use>
-      </svg>
-    </a>
+    <span class="page-header__logo-description" hidden>Интернет-магазин<br>кофейных напитков</span>
   </div>
   <nav class="page-header__main-nav main-nav {% if permalink == "index.html" %}main-nav--within_index{% endif %}">
     <button class="main-nav__toggle" type="button" hidden>
@@ -29,8 +25,22 @@
           >{{ page.name }}</a>
         </li>
       {% else %}
-        <li>Из навигации пропали все пункты 😕</li>
+        <li>Из навигации пропали пункты меню 😕 искать в data.js</li>
       {% endfor %}
+    </ul class="main-nav__user-list">
+    <ul>
+      <li class="main-nav__user-item">
+        <a class="main-nav__user-link main-nav__user-link--office" href="#">
+          <span class="page__hidden">Личный кабинет.</span>
+          <span class="main-nav__user-description" hidden>Войти</span>
+        </a>
+      </li>
+      <li class="main-nav__user-item">
+        <a class="main-nav__user-link main-nav__user-link--basket" href="#">
+          <span class="page__hidden">Корзина покупателя.</span>
+          <span class="main-nav__user-description" hidden>Корзина</span>
+        </a>
+      </li>
     </ul>
   </nav>
 </header>

@@ -1,24 +1,46 @@
-/*@font-face {
-  font-family: "Oswald";
+@font-face {
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src:
-    url("../../fonts/oswaldregular.woff2") format("woff2"),
-    url("../../fonts/oswaldregular.woff") format("woff");
+    url("../../fonts/montserrat-regular.woff2") format("woff2"),
+    url("../../fonts/montserrat-regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Oswald";
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
   src:
-    url("../../fonts/oswaldmedium.woff2") format("woff2"),
-    url("../../fonts/oswaldmedium.woff") format("woff");
+    url("../../fonts/montserrat-medium.woff2") format("woff2"),
+    url("../../fonts/montserrat-medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url("../../fonts/montserrat-semibold.woff2") format("woff2"),
+    url("../../fonts/montserrat-semibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("../../fonts/montserrat-bold.woff2") format("woff2"),
+    url("../../fonts/montserrat-bold.woff") format("woff");
 }
 
 :root {
-  --accent-font: "Oswald", "Impact", sans-serif;
-  --main-font: "Arial", "Helvetica", sans-serif;
-}*/
+  --regular-font: "Montserrat", "Impact", sans-serif;
+  --medium-font: "Montserrat", "Impact", sans-serif;
+  --semibold-font: "Montserrat", "Impact", sans-serif;
+  --bold-font: "Montserrat", "Impact", sans-serif;
+}
