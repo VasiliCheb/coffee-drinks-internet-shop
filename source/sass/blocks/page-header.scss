@@ -1,7 +1,8 @@
-.page-header__wrapper-logo {
+.page-header {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  min-height: 60px;
 }
 
 .page-header__logo-link {

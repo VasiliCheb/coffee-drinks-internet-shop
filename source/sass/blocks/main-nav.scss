@@ -1,0 +1,141 @@
+.main-nav {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+
+  @media (--small-vp) {
+    &--closed .main-nav__list {
+      display: none;
+    }
+
+    &--opened .main-nav__list {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+    }
+
+    &--nojs .main-nav__list {
+      display: block;
+    }
+  }
+}
+
+.main-nav__list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.main-nav__item {
+  @media (--small-vp) {
+    position: relative;
+    background-color: var(--white);
+    box-shadow: 20px 0 0 0 var(--white), -20px 0 0 0 var(--white);
+    padding: 10px;
+
+    &:first-child {
+      padding-bottom: 11px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      left: -20px;
+      bottom: 0;
+      background-color: #f0ebff;
+      box-shadow: 40px 0 0 0 #f0ebff;
+    }
+
+    &:first-child::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      left: -20px;
+      top: 0;
+      background-color: #f0ebff;
+      box-shadow: 40px 0 0 0 #f0ebff;
+    }
+  }
+}
+
+.main-nav__link {
+  display: block;
+  color: var(--base-black);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 12px 15px 14px;
+}
+
+.main-nav__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-color: var(--white);
+  cursor: pointer;
+  border: none;
+  padding: 0;
+
+  @media (--small-vp) {
+    display: block;
+  }
+}
+
+.main-nav--closed .main-nav__toggle::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  margin-left: -8px;
+  width: 16px;
+  height: 1.5px;
+  background-color: var(--base-black);
+  box-shadow: 0 8px 0 0 var(--base-black), 0 16px 0 0 var(--base-black);
+}
+
+.main-nav--opened .main-nav__toggle {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    margin-left: -8px;
+    width: 16px;
+    height: 1.5px;
+    background-color: var(--base-black);
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.main-nav--nojs .main-nav__toggle {
+  display: none;
+}
+
+.main-nav__user-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 40px;
+}
+
+.main-nav__user-item {
+  padding: 16px;
+}
